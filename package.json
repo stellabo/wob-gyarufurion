@@ -1,0 +1,19 @@
+{
+  "name": "wob-gyarufurion",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/stellabo/wob-gyarufurion.git",
+  "author": "stellabo <46933816+stellabo@users.noreply.github.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "start": "webpack serve --mode development"
+  },  
+  "devDependencies": {
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4",
+    "webpack-merge": "^5.10.0"
+  }
+}
