@@ -7,90 +7,26 @@
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
 /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (() => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _utilities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utilities */ \"./src/utilities.js\");\n\n\nconsole.log(_utilities__WEBPACK_IMPORTED_MODULE_0__.double(2));\nconsole.log(_utilities__WEBPACK_IMPORTED_MODULE_0__.NAME);\n\n//# sourceURL=webpack://wob-gyarufurion/./src/index.js?");
-
-/***/ }),
-
-/***/ "./src/utilities.js":
-/*!**************************!*\
-  !*** ./src/utilities.js ***!
-  \**************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   NAME: () => (/* binding */ NAME),\n/* harmony export */   double: () => (/* binding */ double)\n/* harmony export */ });\n// ある数字を引数として与えるとその数字の２乗の数を返す\nfunction double(num) {\n    return num**2;\n}\n\n// 変更してみる\nconst NAME = 'バンドルされてる？';\n\n//# sourceURL=webpack://wob-gyarufurion/./src/utilities.js?");
+eval("//---------------------------------------\n\nvar ctrlFlg = false;    //Ctrlキーの押下判定フラグ\n\n//マウスホイールが回転した時の処理\nfunction mousewheelFunc(e){\n    //Ctrlキーが押下されている場合は、拡大・縮小処理を行わない\n    if (ctrlFlg){\n        if (e.preventDefault()){\n            e.preventDefault();\n        } else {\n            return false;\n        }\n    }\n}\n\n//マウスホイールのイベントリスナー登録\nwindow.addEventListener(\"mousewheel\", mousewheelFunc, { passive: false } );\n\n\n//Ctrlキー押下または離した場合の処理\nfunction keyUpDownFunc(e){\n    //コントロールキーの状態を取得\n    ctrlFlg = e.ctrlKey;    //コントロールキーが押下されている場合はtrue, 離された場合はfalse\n    \n    return;\n}\n\n //キーボード操作時のイベントリスナー登録\ndocument.addEventListener(\"keyup\", keyUpDownFunc);\ndocument.addEventListener(\"keydown\", keyUpDownFunc);\n\n//---------------------------------------\n\nconst cardImgSize = {x:123/4,y:180/4,margin:5} \n\n//ウィンドウに表示させる\nwindow.onload = function() {\n\n    /**\n     * ボードのカード置き場の枠を描画する\n     */\n\n    // 枠を表示するためのコンテナを作成\n    var container = new createjs.Container();\n    console.log(\"Container created\"); // ログを追加\n\n    for(var i = 0; i < 7 ; i++){\n        var zone = new createjs.Shape();\n        zone.graphics.beginStroke(\"#ffffff\");\n        zone.graphics.drawRect((cardImgSize.y-cardImgSize.x)/2, 0, cardImgSize.x, cardImgSize.y);\n        zone.regX = cardImgSize.y/2;\n        zone.regY = cardImgSize.y/2;\n        zone.x = 28+40*i;\n        zone.y = 40;\n\n        container.addChild(zone);\n    }\n\n    console.log(\"Zone created\"); // ログを追加\n\n    // メインのキャンバスにコンテナを追加\n    const Canv = document.getElementById(\"canv\") ;\n    const stage = new createjs.Stage(Canv);\n    //stage.enableMouseOver();\n    stage.addChild(container);\n    console.log(\"Stage updated\"); // ログを追加\n\n   //画面下部のメッセージ\n   const createdbyText = new createjs.Text(\"Created by  \", \"6px serif\",\"white\");\n   const twiAccountText = new createjs.Text(\"@whfre\", \"6px serif\",\"white\");\n   const updateText = new createjs.Text(\" 開発中…\", \"6px serif\",\"white\");\n   twiAccountText.x = createdbyText.getMeasuredWidth();\n   updateText.x = createdbyText.getMeasuredWidth()+twiAccountText.getMeasuredWidth()+5;\n   twiAccountText.color = \"#1111cc\";\n   twiAccountText.cursor = \"pointer\";\n   const hitAreaShape = new createjs.Shape;\n   hitAreaShape.set({\n       graphics : new createjs.Graphics().beginFill(\"#FFF\").drawEllipse(0,0,twiAccountText.getMeasuredWidth(),twiAccountText.getMeasuredHeight())\n   });\n   twiAccountText.hitArea = hitAreaShape;\n   const footerContainer = new createjs.Container;\n   footerContainer.addChild(createdbyText,twiAccountText,updateText);\n   twiAccountText.addEventListener(\"click\",clicktwiAccountText);\n   //twitterアカウントを開く処理\n   function clicktwiAccountText(event) {               \n       window.open(\"https://twitter.com/whfre\")\n   };\n   stage.addChild(footerContainer);\n   footerContainer.y =  140;\n   stage.update();\n};\n\n\n\n//# sourceURL=webpack://wob-gyarufurion/./src/index.js?");
 
 /***/ })
 
 /******/ 	});
 /************************************************************************/
-/******/ 	// The module cache
-/******/ 	var __webpack_module_cache__ = {};
-/******/ 	
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/ 		// Check if module is in cache
-/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
-/******/ 		if (cachedModule !== undefined) {
-/******/ 			return cachedModule.exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = __webpack_module_cache__[moduleId] = {
-/******/ 			// no module.id needed
-/******/ 			// no module.loaded needed
-/******/ 			exports: {}
-/******/ 		};
-/******/ 	
-/******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
-/******/ 	
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/ 	
-/************************************************************************/
-/******/ 	/* webpack/runtime/define property getters */
-/******/ 	(() => {
-/******/ 		// define getter functions for harmony exports
-/******/ 		__webpack_require__.d = (exports, definition) => {
-/******/ 			for(var key in definition) {
-/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
-/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
-/******/ 				}
-/******/ 			}
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
-/******/ 	(() => {
-/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/make namespace object */
-/******/ 	(() => {
-/******/ 		// define __esModule on exports
-/******/ 		__webpack_require__.r = (exports) => {
-/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 			}
-/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/************************************************************************/
 /******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/index.js");
+/******/ 	var __webpack_exports__ = {};
+/******/ 	__webpack_modules__["./src/index.js"]();
 /******/ 	
 /******/ })()
 ;
