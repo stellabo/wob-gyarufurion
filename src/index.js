@@ -32,62 +32,40 @@ document.addEventListener("keydown", keyUpDownFunc);
 
 //---------------------------------------
 
-const cardImgSize = {x:123/4,y:180/4,margin:5} 
+const cardImgSize = {x:123,y:180,margin:10} 
+
+
+//https://developer.mozilla.org/ja/docs/Web/API/Window/devicePixelRatio
 
 //ウィンドウに表示させる
 window.onload = function() {
 
-    /**
-     * ボードのカード置き場の枠を描画する
-     */
+    //---------------------------------------
 
-    // 枠を表示するためのコンテナを作成
-    var container = new createjs.Container();
-    console.log("Container created"); // ログを追加
+    //const ctx = Field.getContext("2d");
 
-    for(var i = 0; i < 7 ; i++){
-        var zone = new createjs.Shape();
-        zone.graphics.beginStroke("#ffffff");
-        zone.graphics.drawRect((cardImgSize.y-cardImgSize.x)/2, 0, cardImgSize.x, cardImgSize.y);
-        zone.regX = cardImgSize.y/2;
-        zone.regY = cardImgSize.y/2;
-        zone.x = 28+40*i;
-        zone.y = 40;
+    // 表示サイズを設定（CSS におけるピクセル数です）。
+    //const size = 600;
+    //Field.style.width = `${size*2}px`;
+    //Field.style.height = `${size}px`;
 
-        container.addChild(zone);
-    }
+    // メモリ上における実際のサイズを設定（ピクセル密度の分だけ倍増させます）。
+    //const scale = window.devicePixelRatio; // Retina でこの値を 1 にするとぼやけた canvas になります
+    //Field.width = Math.floor(size * scale);
+    //Field.height = Math.floor(size * scale);
 
-    console.log("Zone created"); // ログを追加
+    // CSS 上のピクセル数を前提としているシステムに合わせます。
+    //ctx.scale(scale, scale);
 
-    // メインのキャンバスにコンテナを追加
-    const Canv = document.getElementById("canv") ;
-    const stage = new createjs.Stage(Canv);
-    //stage.enableMouseOver();
-    stage.addChild(container);
-    console.log("Stage updated"); // ログを追加
+    var fieldContainer = new createjs.Container;
+    var f = new createjs.Bitmap("Field.png");
+    fieldContainer.addChild(f);   
+    const Field = document.getElementById("field");
+    const stage2 = new createjs.Stage(Field);
+    stage2.addChild(fieldContainer);
+    stage2.update();
 
-   //画面下部のメッセージ
-   const createdbyText = new createjs.Text("Created by  ", "6px serif","white");
-   const twiAccountText = new createjs.Text("@whfre", "6px serif","white");
-   const updateText = new createjs.Text(" 開発中…", "6px serif","white");
-   twiAccountText.x = createdbyText.getMeasuredWidth();
-   updateText.x = createdbyText.getMeasuredWidth()+twiAccountText.getMeasuredWidth()+5;
-   twiAccountText.color = "#1111cc";
-   twiAccountText.cursor = "pointer";
-   const hitAreaShape = new createjs.Shape;
-   hitAreaShape.set({
-       graphics : new createjs.Graphics().beginFill("#FFF").drawEllipse(0,0,twiAccountText.getMeasuredWidth(),twiAccountText.getMeasuredHeight())
-   });
-   twiAccountText.hitArea = hitAreaShape;
-   const footerContainer = new createjs.Container;
-   footerContainer.addChild(createdbyText,twiAccountText,updateText);
-   twiAccountText.addEventListener("click",clicktwiAccountText);
-   //twitterアカウントを開く処理
-   function clicktwiAccountText(event) {               
-       window.open("https://twitter.com/whfre")
-   };
-   stage.addChild(footerContainer);
-   footerContainer.y =  140;
-   stage.update();
-};
+    //---------------------------------------
+
+}
 
