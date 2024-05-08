@@ -1,0 +1,86 @@
+{
+  "Gyarufurion":{
+    "imageFileName": "Gyarufurion.jpg",
+    "cardNameJP": "暴喰臨塊 ギャルファリオン",
+    "atkPoint" : 4,
+    "defPoint" : 5
+  },
+  "Kentai154":{
+    "imageFileName": "Kentai154.jpg",
+    "cardNameJP": "検体No.154",
+    "atkPoint" : 4,
+    "defPoint" : 4
+  },
+  "Kentai294":{
+    "imageFileName": "Kentai294.jpg",
+    "cardNameJP": "検体No.294",
+    "atkPoint" : 4,
+    "defPoint" : 4
+  },
+  "Julianne":{
+    "imageFileName": "Julianne.jpg",
+    "cardNameJP": "狂鳥 ジュリアンヌ",
+    "atkPoint" : 0,
+    "defPoint" : 1
+  },
+  "Hearteater":{
+    "imageFileName": "Hearteater.jpg",
+    "cardNameJP": "心喰い",
+    "atkPoint" : 8,
+    "defPoint" : 8
+  },
+  "Gyarufur":{
+    "imageFileName": "Gyarufur.jpg",
+    "cardNameJP": "醜悪のギャルファー",
+    "atkPoint" : 1,
+    "defPoint" : 1
+  },
+  "Sharbear":{
+    "imageFileName": "Sharbear.jpg",
+    "cardNameJP": "シャーベア",
+    "atkPoint" : 1,
+    "defPoint" : 1
+  },
+  "Psychobattler":{
+    "imageFileName": "Psychobattler.jpg",
+    "cardNameJP": "サイコバトラー",
+    "atkPoint" : 2,
+    "defPoint" : 3
+  },
+  "Penguit":{
+    "imageFileName": "Penguit.jpg",
+    "cardNameJP": "検体銃士 ペンギート",
+    "atkPoint" : 2,
+    "defPoint" : 2
+  },
+  "Meiguru":{
+    "imageFileName": "Meiguru.jpg",
+    "cardNameJP": "メイグル",
+    "atkPoint" : 0,
+    "defPoint" : 1
+  },
+  "Beem":{
+    "imageFileName": "Beem.jpg",
+    "cardNameJP": "羨望のベーム",
+    "atkPoint" : 2,
+    "defPoint" : 1
+  },
+  "Alligator":{
+    "imageFileName": "Alligator.jpg",
+    "cardNameJP": "デス・アリゲーター",
+    "atkPoint" : 2,
+    "defPoint" : 3
+  },
+  "Akamamushi":{
+    "imageFileName": "Akamamushi.jpg",
+    "cardNameJP": "検体仁義 アカマムシ",
+    "atkPoint" : 1,
+    "defPoint" : 1
+  },
+  "Elephant":{
+    "imageFileName": "Elephant.jpg",
+    "cardNameJP": "鈍叫のエレファンク",
+    "atkPoint" : 1,
+    "defPoint" : 3
+  }
+}

@@ -5,23 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- スマホ用にビューポートを設定する-->
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-    <title>ギャルファリオンおみくじ</title>
+    <title>ギャルファリオンチャレンジ</title>
     <link rel="stylesheet" href="style.css" type="text/css">->
     <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
-    <script src="main.js"></script>
 
   </head>
 
   <body>
-
-    <canvas id="field"></canvas>
-<!-- 
     <div id="mainBoard">
-      <canvas id="canv"></canvas>
-      <canvas id="field"></canvas>
+      <canvas id="field" style="background-image: url('Field.png');" width="1200" height="675" ></canvas>
     </div>
-  -->
 
+    <!--JavaScriptを直接記入ではなく読み込む場合、scriptタグより下のHTML要素にJavaScriptは干渉できなくなってしまう。-->
+    <!--そのため、scriptタグをbodyの一番下に記入する。-->
+    <script src="main.js"></script>
  </body>
 
 </html>

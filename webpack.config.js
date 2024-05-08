@@ -14,6 +14,15 @@ module.exports = {
       // 出力ファイル名
       filename: "main.js"
     },
+    module: {
+        rules: [
+          {
+            test: /\.json$/,
+            loader: "json-loader",
+            type: "javascript/auto"
+          }
+        ]
+    },
     //module: {
     //  rules: [
     //    {
